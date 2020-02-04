@@ -15,5 +15,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, path: "script/1_bootstrap.sh"
   config.vm.provision :shell, path: "script/2_install_lamp.sh"
+  config.vm.provision :shell, path: "script/3_prep_cakephp.sh"
 
 end
