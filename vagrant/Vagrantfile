@@ -17,4 +17,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, path: "script/2_install_lamp.sh"
   config.vm.provision :shell, path: "script/3_prep_cakephp.sh"
 
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 2
+  end
+
+  config.vm.provision "shell", inline: "/bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024", run: "always"
+  config.vm.provision "shell", inline: "/sbin/mkswap /var/swap.1", run: "always"
+  config.vm.provision "shell", inline: "/sbin/swapon /var/swap.1", run: "always"
+
 end

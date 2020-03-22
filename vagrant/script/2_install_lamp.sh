@@ -14,7 +14,7 @@ sudo apt-get -y update
 sudo apt-get -y install apache2
 
 # Installing PHP and it's dependencies
-sudo apt-get -y install php libapache2-mod-php php-dompdf php-gd php-xml php-mbstring php-gettext
+sudo apt-get -y install php libapache2-mod-php php-dompdf php-gd php-xml php-mbstring php-gettext php-intl
 
 # Installing MySQL and it's dependencies, Also, setting up root password for MySQL as it will prompt to enter the password during installation
 
